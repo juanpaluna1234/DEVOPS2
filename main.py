@@ -10,14 +10,14 @@ class Item(BaseModel):
     is_offer: bool
 
 
-@app.get("/items")
+@app.get("/")
 def read_root():
     url = 'https://6303e5400de3cd918b3fde59.mockapi.io/items'
     response = requests.get(url, {}, timeout=5)
     return {"items": response.json()}
 
 
-@app.get("/items/{item_id}")
+@app.get("/item/{item_id}")
 def fetch_root(item_id: int):
     url = 'https://6303e5400de3cd918b3fde59.mockapi.io/items'
     response = requests.get(url+'/'+str(item_id), timeout=5)
