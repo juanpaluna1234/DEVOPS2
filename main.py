@@ -10,7 +10,7 @@ class Item(BaseModel):
     is_offer: bool
 
 
-@app.get("/")
+@app.get("/items")
 def read_root():
     url = 'https://6303e5400de3cd918b3fde59.mockapi.io/items'
     response = requests.get(url, {}, timeout=5)
